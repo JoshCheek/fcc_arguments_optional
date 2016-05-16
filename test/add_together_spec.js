@@ -1,17 +1,5 @@
 var assert = require('chai').assert;
-
-function addTogether(first, second) {
-  if(arguments.length > 1) {
-    if(typeof first !== 'number' || typeof second !== 'number') {
-      return undefined;
-    }
-    return first + second;
-  }
-
-  return function(second) {
-    return addTogether(first, second);
-  }
-}
+var addTogether = require('../src/add_together').addTogether;
 
 describe('addTogether', function() {
   it('adds two arguments together', function() {
